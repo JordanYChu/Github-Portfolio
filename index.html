@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slideshow.css">
+    <link rel="stylesheet" href="personal-details.css">
+    <link rel="stylesheet" href="contact.css">
+    <script src="scripts.js"></script>
+    <title>Document</title>
+</head>
+<body class="dark">
+    <div class="theme">
+        <header>
+            <div class="header-details">
+                <h1>Jordan Chu</h1>
+                <h2>Portfolio</h2>
+                <div class="links">
+                    <img src="https://skillicons.dev/icons?i=linkedin" />
+                    <img src="https://skillicons.dev/icons?i=github" />
+                </div>
+            </div>
+            <img id="next-page" src="icons/chevron-down.svg" alt="">
+        </header>
+
+        <section class="about">
+            <h2>About Me</h2>
+
+            <div class="info">
+                <div class="description">
+                    <p id="description-text">I’m a creative and detail-oriented professional with a passion for design and storytelling. With a background in graphic design and a love for visual arts, I enjoy turning ideas into compelling visuals that communicate effectively. I’m always eager to learn and embrace new challenges, whether it’s mastering a new software tool or diving into a complex project. When I’m not working, you’ll find me exploring art galleries, hiking in nature, or experimenting with new recipes in the kitchen. My goal is to continue growing as a designer and to use my skills to make a positive impact.</p>
+                    <ul class="skills-list">
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>Javascript</li>
+                        <li>Docker</li>
+                        <li>HTML</li>
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <ul class="personal-details">
+                    <img id="pfp" src="./icons/user.png" alt="">
+                    <li class="test"> 
+                        <span class="detail-container">
+                            <span>Name</span> 
+                            <span class="detail">Jordan Chu</span>
+                        </span> 
+                    </li>
+                    <li class="test"> <span class="detail-container">
+                        <span>Age</span> 
+                        <span class="detail">19</span> 
+                    </span></li>
+                    <li class="test"> <span class="detail-container">
+                        <span>Pronouns</span> 
+                        <span class="detail">he/him</span> 
+                    </span></li>
+                    <li class="test"> <span class="detail-container">
+                        <div id="hobbies">Hobbies</div> 
+                        <div id="hobbies-details">
+                            <ul>
+                                <li>Video Games</li>
+                                <li>Programming</li>
+                                <li>Movies</li>
+                                <li>Puzzles</li>
+                                <li>Badminton</li>
+                                <li>Food</li>
+                                <li>Another thing</li>
+                            </ul>
+                        </div>
+                    </span></li>
+                </ul>
+            </div>
+        </section>
+        <section class="project-section">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                </div>
+                <div class="project" >
+                </div>
+                <div class="project">
+                </div>
+                <div class="project">
+                </div>
+                <div class="project">
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <svg id="left-button" onClick=prevProject() fill="currentColor" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"> <g> <g> <polygon points="213.675,255.998 298.667,304.574 298.667,207.422 		"/> </g> </g> <g> <g> <path d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M341.334,341.333h-0.001 c0,7.595-4.032,14.635-10.624,18.453c-3.307,1.92-6.997,2.88-10.709,2.88c-3.648,0-7.317-0.939-10.581-2.816l-149.333-85.333 c-6.656-3.797-10.752-10.859-10.752-18.517c0-7.658,4.096-14.72,10.752-18.517l149.333-85.333 c6.592-3.776,14.72-3.755,21.291,0.064c6.592,3.819,10.624,10.859,10.624,18.453V341.333z"/> </g> </g> </svg>
+                <div>
+                    <span id="current-slide">1</span> of <span id="total-slides">10</span>
+                </div>
+                <svg id="right-button" onclick=nextProject() fill="currentColor" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <polygon points="213.675,255.998 298.667,304.574 298.667,207.422 "></polygon> </g> </g> <g> <g> <path d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M341.334,341.333h-0.001 c0,7.595-4.032,14.635-10.624,18.453c-3.307,1.92-6.997,2.88-10.709,2.88c-3.648,0-7.317-0.939-10.581-2.816l-149.333-85.333 c-6.656-3.797-10.752-10.859-10.752-18.517c0-7.658,4.096-14.72,10.752-18.517l149.333-85.333 c6.592-3.776,14.72-3.755,21.291,0.064c6.592,3.819,10.624,10.859,10.624,18.453V341.333z"></path> </g> </g> </g></svg>
+            </div>
+        </section>
+        <div id="theme-switch-container">
+            <img id="switch" src="./icons/moon.svg">
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="nav-container">
+            <a href="#" class="icon">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="#" class="icon">
+                <i class="fas fa-user"></i>
+            </a>
+            <a href="#" class="icon">
+                <i class="fas fa-project-diagram"></i>
+            </a>
+            <a href="#" class="icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
