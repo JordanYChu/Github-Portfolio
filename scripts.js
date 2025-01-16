@@ -22,16 +22,15 @@ function updateProjects() {
         project.className = 'project';
         if (index === currentIndex) {
             project.classList.add('proj-center');
+        } else if (index === ((currentIndex - 1 + projects.length) % projects.length)) {
+            project.classList.add('proj-left');
+        } else if (index === (currentIndex + 1) % projects.length) {
+            project.classList.add('proj-right');
         } else if (index === (currentIndex - 2 + projects.length) % projects.length) {
             project.classList.add('proj-left-hidden');
         } else if (index === (currentIndex + 2) % projects.length) {
             project.classList.add('proj-right-hidden');
-        } else if (index === (currentIndex - 1 + projects.length) % projects.length) {
-            project.classList.add('proj-left');
-        } else if (index === (currentIndex + 1) % projects.length) {
-            project.classList.add('proj-right');
         } else {
-            console.log("asdasd");
             project.opacity = 0;
         }
     }
@@ -73,14 +72,60 @@ function toggleMode() {
         switchIcon.src = "./icons/moon.svg";
     }
     document.body.classList.toggle("t")
-    console.log(darkMode)
     darkMode = !darkMode;
 }
+function createProjectNode(project_detail) {
+    const title = project_detail[0]
+    const img_src = project_detail[1]
+    const tech_list = project_detail[2]
+
+    const proj = document.createElement("div")
+    proj.classList.add("project")
+
+    const proj_img = document.createElement("img")
+    proj_img.src="project-images/" + img_src
+
+    const proj_tech = document.createElement("div")
+    proj_tech.classList.add("tech-list")
+    tech_list.forEach(tech => {
+        const tech_item = document.createElement("div")
+        tech_item.classList.add("tech-item")
+        tech_item.innerHTML = tech;
+        proj_tech.appendChild(tech_item)
+    })
+
+    const proj_title = document.createElement("div");
+    proj_title.classList.add("project-title");
+    proj_title.innerHTML=title;
+
+    proj.appendChild(proj_title)
+    proj.appendChild(proj_img)
+    proj.appendChild(proj_tech)
+    return proj
+}
+
+const projects_details = [
+    ["LexiLearn", "lexilearn.png", ["React", "OpenAI", "Typescript", "Javascript", "Tailwind"]],
+    ["Recycle Tracker", "recycletracker.png", ["Javascript", "CSS", "HTML", "Flask", "SQL"]],
+    ["Relief Grid", "reliefgrid.png", ["Javascript", "CSS", "Firebase", "NodeJS", "Maps API"]],
+    ["Project Train", "reliefgrid.png", ["Godot", "GDscript"]],
+    ["Music Connect", "reliefgrid.png", ["React", "Typescript","Spotify API", "Tailwind"]],
+    ["Portfolio Site", "reliefgrid.png", ["Javascript", "CSS", "HTML"]],
+]
 document.addEventListener("DOMContentLoaded", function(e) {
     sections = document.querySelectorAll('section');
     indicator = document.querySelector('.scroll-ball');
     const icons = document.querySelectorAll('.icon')
+
+    project_container = document.querySelector(".projects")
+    for(var i=0; i < projects_details.length; i++) {
+        project_container.appendChild(createProjectNode(projects_details[i]))
+    }
+
     projects = document.getElementsByClassName("project")
+
+    
+
     const totalSlides = document.getElementById("total-slides")
     totalSlides.innerHTML = projects.length;
     currentSlide = document.getElementById("current-slide")
@@ -109,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
             }
         });
     });
+
     const sidebar = document.querySelector(".nav-container")
     sidebar.classList.add("sidenavFade")
 
