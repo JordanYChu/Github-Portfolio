@@ -4,6 +4,18 @@ let currentIndex = 1; // Start with the center project
 
 let currentSlide;
 
+/* filepath: /c:/Users/Thequ/OneDrive/Desktop/Github Portfolio/script.js */
+let sections;
+let indicator;
+
+const positions = {
+    'home': '20vh',
+    'about': '30vh',
+    'projects': '40vh',
+    'contact': '50vh'
+};
+
+
 function updateProjects() {
     for(var index = 0; index < projects.length; index++) {
         project = projects[index];
@@ -64,8 +76,10 @@ function toggleMode() {
     console.log(darkMode)
     darkMode = !darkMode;
 }
-
 document.addEventListener("DOMContentLoaded", function(e) {
+    sections = document.querySelectorAll('section');
+    indicator = document.querySelector('.scroll-ball');
+    const icons = document.querySelectorAll('.icon')
     projects = document.getElementsByClassName("project")
     const totalSlides = document.getElementById("total-slides")
     totalSlides.innerHTML = projects.length;
@@ -76,4 +90,36 @@ document.addEventListener("DOMContentLoaded", function(e) {
         toggleMode();
     }) 
     updateProjects()
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= (sectionTop - sectionHeight/3)) {
+                current = section.getAttribute('id');
+            }
+        });
+    
+        icons.forEach(icon => {
+            icon.classList.remove('on-page');
+            icon.classList.add('off-page');
+            if(icon.getAttribute('href').substring(1) === current) {
+                icon.classList.add('on-page');
+                icon.classList.remove('off-page');
+            }
+        });
+    });
+    const sidebar = document.querySelector(".nav-container")
+    sidebar.classList.add("sidenavFade")
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 })
+

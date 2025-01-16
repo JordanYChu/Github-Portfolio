@@ -47,7 +47,9 @@ body::before {
 body.t::before {
     opacity: 1;
 }
-header {
+#home {
+    margin: 0;
+    padding: 0;
     position: relative;
     text-align: center;
     height: 100vh;
@@ -82,6 +84,17 @@ header {
         transform: translateY(0.5vw);
     }
 }
+.sidenavFade {
+    animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
 
 h1 {
     color: var(--text-1);
@@ -97,11 +110,11 @@ section {
     padding: 5% 20%;
 }
 
-.about {
+#about {
     transition: 0.5s;
     background: var(--background)
 }
-.project-section {
+#projects{
     margin-bottom: 10vw;
 }
 
@@ -127,11 +140,14 @@ section {
 }
 
 .links {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
     margin-top: 2vw;
 
 }
 .links img {
-    height: 2vw;
+    height: 2.5vw;
 }
 
 #theme-switch-container {
@@ -161,15 +177,77 @@ section {
     top: 0;
     height: 100vh;
     margin-left: 1vw;
-    width: 60px;
     display: flex; 
     flex-direction: column;
     justify-content: center;
 }
 
 .nav-container {
-    border-radius: 10vw;
-    width: 3vw;
-    background-color: var(--highlight);
-    height: 15vw;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    justify-content: space-evenly;
+    border-radius: 3vw;
+    background: rgba(255, 255, 255, 0.726);
+    border: var(--highlight) 0.375vw solid;
+    padding: 0.25vw;
+}
+
+.icon {
+    border-radius: 100%;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.on-page {
+    animation: pageIn 200ms linear forwards;
+}
+.off-page {
+    animation: pageOut 200ms linear forwards;
+}
+@keyframes pageIn {
+    0% {
+        background-color: rgba(66, 66, 66, 0);
+    }
+    100% {
+        background-color: rgba(66, 66, 66, 0.637);
+    }
+}
+
+@keyframes pageOut {
+    100% {
+        background-color: rgba(66, 66, 66, 0);
+    }
+    0% {
+        background-color: rgba(66, 66, 66, 0.637);
+    }
+}
+.icon > img { 
+    height: 1.5vw;
+    width: 1.5vw;
+    padding: 0.75vw;
+    margin: 0;
+    object-fit: contain;
+}
+
+#experiences {
+    height: 100vh;
+    background-color: var(--background);
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
