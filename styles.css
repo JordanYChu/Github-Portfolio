@@ -99,14 +99,17 @@ body.t::before {
 h1 {
     color: var(--text-1);
     font-size: 7vw;
+    animation: fadeIn 1s forwards linear;
 }
 
 h2 {
+    animation: fadeIn 1s forwards linear;
     color: var(--text-1);
     font-size: 4vw;
 }
 
 h3 {
+    animation: fadeIn 1s forwards linear;
     color: var(--text-1);
     font-size: 3vw;
 }
@@ -195,8 +198,8 @@ section {
     gap: 1vw;
     justify-content: space-evenly;
     border-radius: 3vw;
-    background: rgba(255, 255, 255, 0.726);
-    border: var(--highlight) 0.375vw solid;
+    background: rgb(255, 255, 255);
+    /* border: var(--highlight) 0.375vw solid; */
     padding: 0.25vw;
 }
 

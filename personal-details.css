@@ -20,7 +20,7 @@
 
 .personal-details {
     transform: rotateY(-25deg) translateY(-5vw) ;
-    transition: 0.5s;
+    transition: 1s ease-in-out;
     box-sizing: border-box;
     box-shadow: 0 0 0px 0.5vw var(--highlight);
     border-radius: 2vw;
@@ -32,6 +32,9 @@
     flex-grow: 0;
     flex-shrink: 0;
     background: radial-gradient(var(--secondary-background), var(--background));
+}
+.personal-details.hidden {
+    transform: rotateY(-93.1deg) translateY(-5vw);
 }
 
 .personal-details::before {

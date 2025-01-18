@@ -121,10 +121,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
     for(var i=0; i < projects_details.length; i++) {
         project_container.appendChild(createProjectNode(projects_details[i]))
     }
-
     projects = document.getElementsByClassName("project")
 
-    
+    personal_details = document.querySelector(".personal-details")
 
     const totalSlides = document.getElementById("total-slides")
     totalSlides.innerHTML = projects.length;
@@ -144,6 +143,13 @@ document.addEventListener("DOMContentLoaded", function(e) {
                 current = section.getAttribute('id');
             }
         });
+
+        if(current === "about") {
+            personal_details.classList.remove("hidden")
+        }
+        else {
+            personal_details.classList.add("hidden")
+        }
     
         icons.forEach(icon => {
             icon.classList.remove('on-page');
