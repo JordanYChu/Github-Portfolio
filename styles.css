@@ -246,6 +246,8 @@ section {
 
 #experiences {
     height: 100vh;
+}
+#education {
+    height: 100vh;
     background-color: var(--background);
 }
-

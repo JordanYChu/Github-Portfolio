@@ -15,19 +15,23 @@
     text-align: center;
     position: absolute;
     width: 35vw;
+    padding: 0.5vw;
     top: 0;
     background-color:  var(--background);
     border-radius: 1vw;
-    padding: 0.5vw;
+    /* padding: 0.5vw; */
     border: var(--highlight) 0.5vw solid;
     transition: all 0.5s;
+    box-sizing: border-box;
 }
 .project::after {
-    box-shadow: inset 0vw 0vw 2vw rgba(0, 0, 0, 0.295);
+    /* box-shadow: inset 0vw 0vw 2vw rgba(0, 0, 0, 0.295); */
     content: '';
     display: block;
     height: 100%;
     position: absolute;
+    translate: -0.5vw;
+    border-radius:  1vw;
     top: 0;
     width: 100%;
 }
@@ -127,11 +131,11 @@
     display: inline-flex;
     background: var(--highlight);
     border-radius: 2vw;
-    margin-top: 5vw;
     padding: 0.5vw 1vw;
     justify-content: center;
     align-items: center;
-    gap: 2vw
+    gap: 2vw;
+    box-shadow: var(--background) 0vw 0.3vw 0;
 }
 
 .nav-buttons > div, .nav-buttons > div > span{

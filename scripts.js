@@ -108,9 +108,10 @@ const projects_details = [
     ["LexiLearn", "lexilearn.png", ["React", "OpenAI", "Typescript", "Javascript", "Tailwind"]],
     ["Recycle Tracker", "recycletracker.png", ["Javascript", "CSS", "HTML", "Flask", "SQL"]],
     ["Relief Grid", "reliefgrid.png", ["Javascript", "CSS", "Firebase", "NodeJS", "Maps API"]],
-    ["Project Train", "reliefgrid.png", ["Godot", "GDscript"]],
-    ["Music Connect", "reliefgrid.png", ["React", "Typescript","Spotify API", "Tailwind"]],
-    ["Portfolio Site", "reliefgrid.png", ["Javascript", "CSS", "HTML"]],
+    ["Project Train", "train.png", ["Godot", "GDscript"]],
+    ["Connectify", "connectify.png", ["React", "Typescript","Spotify API", "Tailwind"]],
+    ["Portfolio Site", "portfolio.png", ["Javascript", "CSS", "HTML"]],
+    ["TAAM", "TAAM.png", ["Javascript", "CSS", "HTML"]],
 ]
 document.addEventListener("DOMContentLoaded", function(e) {
     sections = document.querySelectorAll('section');
