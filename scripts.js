@@ -1,4 +1,3 @@
-
 var projects = document.getElementsByClassName("project")
 let currentIndex = 1; // Start with the center project
 
@@ -174,5 +173,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
             });
         });
     });
+    
 })
 

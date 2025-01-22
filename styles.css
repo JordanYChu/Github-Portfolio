@@ -248,6 +248,13 @@ section {
     height: 100vh;
 }
 #education {
-    height: 100vh;
     background-color: var(--background);
+}
+
+.resume-container {
+    margin: 5vw;
+}
+#resume {
+    width: 100%;
+    box-shadow: var(--highlight-2) 2vw 2vw 0;
 }
